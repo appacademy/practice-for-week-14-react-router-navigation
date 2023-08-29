@@ -1,6 +1,7 @@
 import { Redirect, useHistory } from 'react-router-dom';
 
 function Stocks() {
+  const history = useHistory();
   const loggedIn = true;
 
   if (!loggedIn) {
@@ -8,7 +9,6 @@ function Stocks() {
       <Redirect to='/not-logged-in' />
     );
   };
-  const history = useHistory();
   const handleClick = () => {
     window.alert('Sending info to the DB!');
     history.push('/');
